@@ -21,6 +21,19 @@ public class Doors extends House implements NonExisted {
         }
         return "была" + hopelessly + "забаррикадирована";
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Doors doors = (Doors) obj;
+        return doors.hopelessly == this.hopelessly;
+    }
+    @Override
+    public int hashCode(){
+        return this.hopelessly.hashCode();
+    }
+
 
 }
 
