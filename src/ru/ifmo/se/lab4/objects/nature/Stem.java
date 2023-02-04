@@ -50,6 +50,18 @@ public class Stem extends Nature implements Describable {
     public String takeOff(String what){
         return " снял " + what;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Stem stem = (Stem) obj;
+        return stem.stemDescription == this.stemDescription;
+    }
+    @Override
+    public int hashCode(){
+        return this.stemDescription.hashCode();
+    }
 
 
 
