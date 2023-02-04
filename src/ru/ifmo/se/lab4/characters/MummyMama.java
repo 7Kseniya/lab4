@@ -17,6 +17,18 @@ public class MummyMama extends Person{
         }
         return "попробовала отворить " + door1.getHouseName() + openDoor;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        MummyMama mummyMama = (MummyMama) obj;
+        return mummyMama.openDoor == this.openDoor;
+    }
+    @Override
+    public int hashCode(){
+        return this.openDoor.hashCode();
+    }
     public String breakGlass(){
         class Glass{
             public String toString(){
