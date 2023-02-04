@@ -24,4 +24,16 @@ public class MummyTroll extends Person implements OverLooked {
     public String flyUp(String how){ //стремглав
         return how + "подлетел ";
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        MummyTroll mummyTroll = (MummyTroll) obj;
+        return mummyTroll.overlooked == this.overlooked;
+    }
+    @Override
+    public int hashCode(){
+        return this.overlooked.hashCode();
+    }
 }
