@@ -24,5 +24,17 @@ public class Flowers extends Nature implements AdverbNormalization {
         }
         return null;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Flowers flowers = (Flowers) obj;
+        return flowers.flowersDescription == this.flowersDescription;
+    }
+    @Override
+    public int hashCode(){
+        return this.flowersDescription.hashCode();
+    }
 
 }
