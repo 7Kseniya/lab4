@@ -53,4 +53,9 @@ public class Person {
         Person person  = (Person) o;
         return Objects.equals(name, person.name) && Objects.equals(location, person.location) && Objects.equals(preposition, person.preposition);
     }
+    @Override
+    public int hashCode(){
+        String stringToHash = this.getClass().getSimpleName();
+        return stringToHash.hashCode();
+    }
 }
