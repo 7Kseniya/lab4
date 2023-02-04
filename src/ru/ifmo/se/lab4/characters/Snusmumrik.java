@@ -26,4 +26,16 @@ public class Snusmumrik extends Person implements OverLooked {
     public String stepForward(){
         return "выступил " ;
     }
+     @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Snusmumrik snusmumrik = (Snusmumrik) obj;
+        return snusmumrik.look == this.look;
+    }
+    @Override
+    public int hashCode(){
+        return this.look.hashCode();
+    }
 }
