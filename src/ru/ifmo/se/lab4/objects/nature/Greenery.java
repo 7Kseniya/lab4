@@ -25,4 +25,16 @@ public class Greenery extends Nature implements Overgrown {
     public String overgrow(String string) {
         return string + "проросших в ";
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Greenery greenery = (Greenery) obj;
+        return greenery.greeneryDescription == this.greeneryDescription;
+    }
+    @Override
+    public int hashCode(){
+        return this.greeneryDescription.hashCode();
+    }
 }
