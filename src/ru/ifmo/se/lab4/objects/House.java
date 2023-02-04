@@ -24,6 +24,7 @@ public abstract class House {
 
     @Override
     public int hashCode(){
-        return Objects.hashCode(houseName);
+        String stringToHash = this.getClass().getSimpleName();
+        return stringToHash.hashCode();
     }
 }
