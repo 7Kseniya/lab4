@@ -15,6 +15,18 @@ public class Carpet extends Nature {
         }
         return carpetDescription;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this.getClass() != obj.getClass() || obj == null){
+            return false;
+        }
+        Carpet carpet = (Carpet) obj;
+        return carpet.carpetDescription == this.carpetDescription;
+    }
+    @Override
+    public int hashCode(){
+        return this.carpetDescription.hashCode();
+    }
 
 
 }
