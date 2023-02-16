@@ -9,16 +9,10 @@ import java.util.Objects;
 public class Person {
     //Person person = new Person("все", "черноту подвала", "в");
     public String comeDown(int amount) throws Exception {
-        try {
-            if (amount > 1) {
-                throw new AmountOfPeople("not enough people");
-            }
-        }
-        catch(AmountOfPeople e){
-            System.out.println(e.getMessage());
+        if (amount > 1) {
+            throw new AmountOfPeople("not enough people");
         }
         return "все спустились";
-
     }
 
     private String name;
