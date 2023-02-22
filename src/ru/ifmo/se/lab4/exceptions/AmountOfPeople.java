@@ -1,6 +1,6 @@
 package ru.ifmo.se.lab4.exceptions;
-public class AmountOfPeople extends Exception{
-    public AmountOfPeople(String message){
+public class AmountOfPeopleException extends Exception{
+    public AmountOfPeopleException(String message){
         super(message);
     }
 }
