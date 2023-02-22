@@ -5,12 +5,12 @@ import ru.ifmo.se.lab4.enums.Adverbs;
 import ru.ifmo.se.lab4.enums.ColorParams;
 import ru.ifmo.se.lab4.enums.NatureParams;
 import ru.ifmo.se.lab4.enums.StemParams;
-import ru.ifmo.se.lab4.exceptions.AmountOfPeople;
+import ru.ifmo.se.lab4.exceptions.AmountOfPeopleException;
 import ru.ifmo.se.lab4.objects.*;
 import ru.ifmo.se.lab4.objects.nature.*;
 
 public class Main {
-    public static void main(String[] args) throws AmountOfPeople {
+    public static void main(String[] args) throws AmountOfPeopleException {
 
 
 
@@ -74,7 +74,12 @@ public class Main {
         output8 += stem.wrappedAround(Adverbs.KINDABYCHANCE) + "и" + stem.takeOff("её") + ". ";
         String output9 = "Тем временем " +  sniff.runAround() + veranda.overgrow("наглухо ") + ". ";
         output9 += mummyTroll2.getName() + mummyTroll2.flyUp("стремглав ") + mummyTroll2.getPreposition() + mummyTroll2.getLocation() + "и " + mummyTroll2.overLook(Adverbs.RIGHTBEFOREEYES);
-        String output10 = oneByOne.comeDown(5) + oneByOne.getPreposition() + oneByOne.getLocation() + ".";
+        String output10 = null;
+        try {
+            output10 = oneByOne.comeDown(5) + oneByOne.getPreposition() + oneByOne.getLocation() + ".";
+        } catch (AmountOfPeopleException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println(output1);
         System.out.println(output2);
