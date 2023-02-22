@@ -1,6 +1,6 @@
 package ru.ifmo.se.lab4.characters;
 
-import ru.ifmo.se.lab4.exceptions.AmountOfPeople;
+import ru.ifmo.se.lab4.exceptions.AmountOfPeopleException;
 import ru.ifmo.se.lab4.exceptions.NoLocationException;
 import ru.ifmo.se.lab4.exceptions.NoPrepositionException;
 
@@ -8,9 +8,9 @@ import java.util.Objects;
 
 public class Person {
     //Person person = new Person("все", "черноту подвала", "в");
-    public String comeDown(int amount) throws Exception {
-        if (amount > 1) {
-            throw new AmountOfPeople("not enough people");
+    public String comeDown(int amount) throws AmountOfPeopleException {
+        if (amount < 1) {
+            throw new AmountOfPeopleException("not enough people");
         }
         return "все спустились";
     }
